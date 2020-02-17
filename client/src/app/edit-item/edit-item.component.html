@@ -12,11 +12,12 @@
                name="amount"
                placeholder="Enter your name"
                required #amount="ngModel"
-               pattern="^$|^([0-9]|[1-9][0-9]|[1][0][0][0][0])?">
+               pattern="^$|^([1-9]|[1-8][0-9]|9[0-9]|[1-8][0-9]{2}|9[0-8][0-9]|99[0-9]|[1-8][0-9]{3}|9[0-8][0-9]{2}|99[0-8][0-9]|999[0-9]|10000)?"
+               >
       </div>
-      <div [hidden]="!amount.pristine" class="alert alert-danger">Item Amount can't be empty or negative</div>
+      <div [hidden]="!amount.pristine" class="alert alert-danger">Item amount can't be empty or negative</div>
       <div *ngIf="amount.errors && (amount.dirty || amount.touched)">
-        <div [hidden]="!amount.errors.pattern">
+        <div [hidden]="!amount.errors.pattern" class="alert alert-danger">
           Number should be between 0 and 10000
         </div>
       </div>

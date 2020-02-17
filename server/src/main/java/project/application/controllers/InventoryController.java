@@ -3,39 +3,37 @@ package project.application.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import project.application.entities.User;
-import project.application.repositories.UserRepository;
+import project.application.entities.Item;
 import project.application.service.InventoryService;
 
 import javax.validation.Valid;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
-public class UserController {
+public class InventoryController {
 
     @Autowired
     private InventoryService inventoryService;
 
-    public UserController(InventoryService inventoryService) {
+    public InventoryController(InventoryService inventoryService) {
         this.inventoryService = inventoryService;
     }
 
     @GetMapping("/inventory")
-    public List<User> getUsers() {
-        List<User> items = inventoryService.retrieveInventory();
+    public List<Item> getItems() {
+        List<Item> items = inventoryService.retrieveInventory();
         return items;
     }
 
     @PostMapping("/inventory")
-    public void saveItem(@Valid @RequestBody User user) {
-        inventoryService.saveItem(user);
+    public void saveItem(@Valid @RequestBody Item item) {
+        inventoryService.saveItem(item);
         System.out.println("Item Added to the Inventory Successfully");
     }
 
     @GetMapping("/inventory/{itemId}")
-    public User getItem(@PathVariable(name="itemId")Long itemId) {
+    public Item getItem(@PathVariable(name="itemId")Long itemId) {
         return inventoryService.getItem(itemId);
     }
 
@@ -46,9 +44,9 @@ public class UserController {
     }
 
     @PutMapping("/inventory/{itemId}")
-    public void updateItem(@RequestBody User item,
+    public void updateItem(@RequestBody Item item,
                            @PathVariable(name="itemId")Long itemId){
-        User it = inventoryService.getItem(itemId);
+        Item it = inventoryService.getItem(itemId);
         if(it != null){
             inventoryService.updateItem(item);
         }

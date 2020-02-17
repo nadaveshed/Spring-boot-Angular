@@ -2,8 +2,8 @@ package project.application.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import project.application.entities.User;
-import project.application.repositories.UserRepository;
+import project.application.entities.Item;
+import project.application.repositories.InventoryRepository;
 import project.application.service.InventoryService;
 
 import java.util.List;
@@ -13,23 +13,23 @@ import java.util.Optional;
 public class InventoryServiceImpl implements InventoryService {
 
     @Autowired
-    private UserRepository inventoryRepository;
+    private InventoryRepository inventoryRepository;
 
-    public void InventoryServiceImpl(UserRepository inventoryRepository) {
+    public void InventoryServiceImpl(InventoryRepository inventoryRepository) {
         this.inventoryRepository = inventoryRepository;
     }
 
-    public List<User> retrieveInventory() {
-        List<User> items = (List<User>) inventoryRepository.findAll();
+    public List<Item> retrieveInventory() {
+        List<Item> items = (List<Item>) inventoryRepository.findAll();
         return items;
     }
 
-    public User getItem(Long itemId) {
-        Optional<User> optItem = inventoryRepository.findById(itemId);
+    public Item getItem(Long itemId) {
+        Optional<Item> optItem = inventoryRepository.findById(itemId);
         return optItem.get();
     }
 
-    public void saveItem(User item){
+    public void saveItem(Item item){
         inventoryRepository.save(item);
     }
 
@@ -37,7 +37,7 @@ public class InventoryServiceImpl implements InventoryService {
         inventoryRepository.deleteById(itemId);
     }
 
-    public void updateItem(User item) {
+    public void updateItem(Item item) {
         inventoryRepository.save(item);
     }
 }

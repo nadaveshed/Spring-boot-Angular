@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Data
 @Entity
-public class User {
+public class Item {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -27,7 +27,7 @@ public class User {
     @Column(name = "item_details")
     private final String itemDetails;
     
-    public User() {
+    public Item() {
         this.name = "";
         this.itemNo = "";
         this.amount = "";
@@ -35,7 +35,7 @@ public class User {
         this.itemDetails = "";
     }
     
-    public User(String name, String itemNo, String amount, String inventoryCode, String itemDetails) {
+    public Item(String name, String itemNo, String amount, String inventoryCode, String itemDetails) {
         this.name = name;
         this.itemNo = itemNo;
         this.amount = amount;
