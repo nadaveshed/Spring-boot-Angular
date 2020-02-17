@@ -16,7 +16,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ```sh
 cd client
 ```
-Run `ng serve` for a client server. 
+Run `ng serve` for a client server, and 
 Navigate to 
 ```
 http://localhost:4200/
