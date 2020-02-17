@@ -1,0 +1,33 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Item Number</th>
+        <th scope="col">Name</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Inventory Code</th>
+        <th scope="col">Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let it of items">
+        <td>{{ it.id }}</td>
+        <td>{{ it.itemNo }}</td>
+        <td>{{ it.name }}</td>
+        <td>{{ it.amount }}</td>
+        <td>{{ it.inventoryCode }}</td>
+        <td>
+          <button (click)="deleteItem(it.id)" class="btn btn-danger">Delete</button>
+          <button (click)="updateItem(it.id)" class="btn btn-info">Update</button>
+          <button class="btn btn-info"
+                  ngbPopover="{{it.itemDetails}}"
+                  popoverTitle="{{it.name}}">Details</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

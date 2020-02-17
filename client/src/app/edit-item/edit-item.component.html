@@ -1,0 +1,27 @@
+<h3>Update {{item.name}} stock</h3>
+<div class="card my-5">
+  <div class="card-body">
+
+    <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+
+      <div class="form-group">
+        <label for="amount">Amount</label>
+        <input type="number" [(ngModel)]="item.amount"
+               class="form-control"
+               id="amount"
+               name="amount"
+               placeholder="Enter your name"
+               required #amount="ngModel"
+               pattern="^$|^([0-9]|[1-9][0-9]|[1][0][0][0][0])?">
+      </div>
+      <div [hidden]="!amount.pristine" class="alert alert-danger">Item Amount can't be empty or negative</div>
+      <div *ngIf="amount.errors && (amount.dirty || amount.touched)">
+        <div [hidden]="!amount.errors.pattern">
+          Number should be between 0 and 10000
+        </div>
+      </div>
+      <button type="submit" [disabled]="!userForm.form.valid"
+              class="btn btn-info">Submit</button>
+    </form>
+  </div>
+</div>
