@@ -5,6 +5,14 @@ The website show an inventory list of item (item number, name, amount, inventory
 The user can add add delete an specific item.
 Also the user can edit the amount of quantity (can deposit or withdraw).
 
+Project include:
+- Java
+- Spring boot
+- Swagger
+- REST API/JSON
+- Docker
+- Angular 
+
 In order to run the app both the server side and the client side need to be run.
 
 # Client
@@ -26,13 +34,14 @@ The app will automatically reload if you change any of the source files.
 # Server
 
 ## Development server
+
+This project was generated with [Spring Boot](https://spring.io) version 2.2.4
+
 ```sh
 cd server
 ```
 
-Choose Application, and hit the play button
-
-
+Choose Application, and hit the play button then
 Navigate to
 ```
 http://localhost:8080/
