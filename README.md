@@ -27,7 +27,7 @@ cd client
 Run `ng serve` for a client server, and 
 Navigate to 
 ```
-http://localhost:4200/
+http://localhost:4200
 ```
 The app will automatically reload if you change any of the source files.
 
@@ -44,5 +44,5 @@ cd server
 Choose Application, and hit the play button then
 Navigate to
 ```
-http://localhost:8080/
+http://localhost:8080
 ```
