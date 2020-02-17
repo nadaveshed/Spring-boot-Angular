@@ -10,7 +10,6 @@ Project include:
 - Spring boot
 - Swagger
 - REST API/JSON
-- Docker
 - Angular 
 
 In order to run the app both the server side and the client side need to be run.
