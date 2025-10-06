@@ -1,4 +1,4 @@
-# Spring-boot-Angular
+# Inventory project Spring-boot-Angular
 Inventory project that build in angular 9, spring boot and h2 database.
 The project is build with restful Api in the server and crud in the client.
 The website show an inventory list of item (item number, name, amount, inventory code).
