@@ -5,14 +5,27 @@
 
 version: 2
 updates:
-  - package-ecosystem: "gradle"
+  # Spring / Java (Maven)
+  - package-ecosystem: "maven"
     directory: "/server"
     schedule:
       interval: "weekly"
     open-pull-requests-limit: 10
+    groups:
+      spring:
+        patterns:
+          - "org.springframework*"
+          - "org.springdoc*"
 
+  # Angular / npm
   - package-ecosystem: "npm"
     directory: "/client"
     schedule:
       interval: "weekly"
     open-pull-requests-limit: 10
+    groups:
+      angular:
+        patterns:
+          - "@angular*"
+          - "rxjs"
+          - "zone.js"
